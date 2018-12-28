@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "swiper-month": "/components/swipermonth/swipermonth",
+    "view-tag": "/components/viewtag/viewtag"
+  },
+  "disableScroll": true
+}

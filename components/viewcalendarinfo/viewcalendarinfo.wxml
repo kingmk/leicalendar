@@ -1,0 +1,36 @@
+<!--components/viewcalendarinfo/viewcalendarinfo.wxml-->
+
+<view class="fortune-info">
+      <view class="info-top">
+        <view class="info-left">
+          <view class="info-lucks">
+            <view class="info-luck first" wx:if="{{info.luck && info.luck.length>0}}">{{info.luck}}</view>
+            <view class="info-luck" wx:if="{{info.evil && info.evil.length>0}}">{{info.evil}}</view>
+          </view>
+          <view class="info-guard">十二值日：{{info.guard}}</view>
+        </view>
+        <view class="info-right">
+          <view class="info-bazi">{{info.yearHeaven}}{{info.yearEarth}}年   {{info.monthHeaven}}{{info.monthEarth}}月   {{info.dayHeaven}}{{info.dayEarth}}日</view>
+          <view class="info-solar" wx:if="{{info.solar && info.solar.length>0}}">{{info.solar}} | {{info.solar_time}}</view>
+          <!-- <view>廿八星宿：{{info.constel}}</view> -->
+        </view>
+      </view>
+      <view class="info-events">
+        <view class="info-event">
+          <image class="event-icon" src="/static/images/icon_good.png"></image>
+          <view class="event-text {{info.evtGoodsStyle}}">
+            <block wx:for="{{info.evtGoods}}" wx:key="{{index}}"  wx:for-index="index" wx:for-item="evt">
+              <view class="info-evt-item">{{evt}}</view>
+            </block>
+          </view>
+        </view>
+        <view class="info-event">
+          <image class="event-icon" src="/static/images/icon_bad.png"></image>
+          <view class="event-text {{info.evtBadsStyle}}">
+            <block wx:for="{{info.evtBads}}" wx:key="{{index}}"  wx:for-index="index" wx:for-item="evt">
+              <view class="info-evt-item {{styleBads}}">{{evt}}</view>
+            </block>
+          </view>
+        </view>
+      </view>
+    </view>

@@ -1,0 +1,4 @@
+<!--components/calbook/calbook.wxml-->
+<block wx:for="{{images}}" wx:key="{{index}}"  wx:for-index="index" wx:for-item="image">
+  <image class="img-calbook {{image.style}}" mode="aspectFit" src="{{image.url}}" data-index="{{index}}" bindload="loadImage"></image>
+</block>

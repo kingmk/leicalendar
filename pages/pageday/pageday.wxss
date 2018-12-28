@@ -1,0 +1,29 @@
+/* pages/pageday/pageday.wxss */
+
+.container-day {
+  padding-top: 0;
+  position: relative;
+}
+
+scroll-day {
+  margin-top: 120rpx;
+  width: 100%;
+}
+
+.separator {
+  position: absolute;
+  top: 0;
+  left: 174rpx;
+  width: 20rpx;
+  height: 100%;
+  z-index: 999;
+  opacity: 0.2;
+}
+
+.img-back {
+  position: absolute;
+  left: 46rpx;
+  top: 40rpx;
+  width: 50rpx;
+  height: 100rpx;
+}

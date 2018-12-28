@@ -1,0 +1,12 @@
+<!--pages/pageyear/pageyear.wxml-->
+<view class="container container-year" bindtouchstart="touchStart" bindtouchmove="touchMove" bindtouchend="touchEnd" style="margin-left:{{shiftx}}rpx;margin-right:{{-shiftx}}rpx;">
+
+  <swiper class="swiper-year" vertical current="{{current}}">
+    <block wx:for="{{years}}" wx:key="{{index}}"  wx:for-index="index" wx:for-item="item">
+      <swiper-item>
+        <view-year id="view-year-{{item}}" class="view-year" year="{{item}}" bind:selmonth="selectYearMonth"></view-year>
+      </swiper-item>
+    </block>
+  </swiper>
+  <image class="image-solar" mode="aspectFit" src="{{imgBg}}"></image>
+</view>

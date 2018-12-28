@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "scroll-day": "/components/scrollday/scrollday"
+  },
+  "disableScroll": true
+}

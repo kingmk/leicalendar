@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "select-place": "/components/selectplace/selectplace",
+    "select-date": "/components/selectdate/selectdate",
+    "titlebar": "/components/titlebar/titlebar"
+  }
+}

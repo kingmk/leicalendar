@@ -1,0 +1,17 @@
+/* components/titlebar/titlebar.wxss */
+.titlebar {
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  color: #000;
+  font-size: 36rpx;
+  position: relative;
+}
+
+.titlebar .img-back {
+  position: absolute;
+  left: 46rpx;
+  bottom: 0;
+  width: 50rpx;
+  height: 100rpx;
+}

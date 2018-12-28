@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "calbook": "/components/calbook/calbook"
+  },
+  "disableScroll": true
+}

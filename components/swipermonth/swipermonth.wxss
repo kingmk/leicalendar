@@ -1,0 +1,17 @@
+/* components/swipermonth/swipermonth.wxss */
+
+.wrapper-swiper-month {
+  height: 100%;
+}
+
+.swiper-month {
+  height: 100%;
+}
+
+view-calendar {
+  height: 100%;
+  padding: 20rpx 20rpx 0;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}

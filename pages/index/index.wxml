@@ -1,0 +1,18 @@
+<!--index.wxml-->
+<view class="container" ontap="tapStart">
+ <!-- bindtouchstart="touchStart" bindtouchmove="touchMove" bindtouchend="touchEnd" > -->
+  <image class="img-index-bg" mode="widthFix" src="../../static/images/index.gif"></image>
+  <view class="anchor">
+    <calbook id="book-red" bookType="book_red" style="width:{{posRed.w}}rpx; height: {{posRed.h}}rpx; left: {{posRed.l}}rpx; top: {{posRed.t}}rpx;z-index:{{posRed.z}}" animate="{{posRed.a}}"></calbook>
+    <!-- <calbook id="book-blue" bookType="book_blue" style="width:{{posBlue.w}}rpx; height: {{posBlue.h}}rpx; left: {{posBlue.l}}rpx; top: {{posBlue.t}}rpx; z-index:{{posBlue.z}}" animate="{{posBlue.a}}"></calbook> -->
+    <image class="img-index-info" mode="widthFix" src="../../static/images/index_info.png"></image>
+  </view>
+</view>
+
+<view class="init-view" wx:if="{{specialDay}}" animation="{{animationInit}}">
+  <view class="init-counting {{showCounting}}" bindtap="skipCover">
+    <view class="init-counting-line line1">跳过</view>
+    <view class="init-counting-line">{{counting}}秒</view>
+  </view>
+  <image class="img-init" mode="aspectFill" src="{{specialDay.img}}" bindload="coverLoaded"></image>
+</view>

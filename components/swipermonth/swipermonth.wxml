@@ -1,0 +1,10 @@
+<!--components/swipermonth/swipermonth.wxml-->
+<view class="wrapper-swiper-month">
+  <swiper class="swiper-month" current="{{current}}" bindchange="swipeEnd" circular="{{isLoop}}" duration="{{duration}}" skip-hidden-item-layout="true">
+    <block wx:for="{{monthes}}" wx:key="{{index}}"  wx:for-index="index" wx:for-item="item">
+      <swiper-item>
+        <view-calendar id="calendar-{{index}}" year="{{item.year}}" month="{{item.month}}" bind:clickdate="onClickDate" bind:showSpecial="onShowSpecial" bind:clickinfo="onClickInfo"></view-calendar>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>

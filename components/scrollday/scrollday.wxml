@@ -1,0 +1,59 @@
+<!--components/scrollday/scrollday.wxml-->
+
+<view class="container-scroll-day" animation="{{animation}}">
+  <view id="sidebar-outter" class="sidebar-outter">
+    <view class="sidebar" style="margin-top:{{sideMarginTop}}; height:{{sideHeight}};"><view class="yearstr">{{curYearStr}}</view><view class="space"></view><view class="chinese">{{curMonthStr[0]}}</view><view class="chinese">{{curMonthStr[1]}}</view><view class="chinese">{{curMonthStr[2]}}</view>{{debug}}</view>
+  </view>
+  <scroll-view id="scroll-view-days" scroll-y scroll-top="{{scrollTop}}" bindscroll="onScroll">
+  <!-- bindscrolltoupper="onScrollTop" bindscrolltolower="onScrollBottom" -->
+    <!-- <block wx:for="{{dayInfos}}" wx:key="{{index}}"  wx:for-index="index" wx:for-item="dayInfo">
+      <template is="dayInfo" data="{{...dayInfo}}"></template>
+    </block> -->
+
+    <block wx:for="{{monthKeys}}" wx:key="{{idxKey}}" wx:for-index="idxKey" wx:for-item="monthKey">
+      <block wx:if="{{monthDayInfos[monthKey]}}" wx:for="{{monthDayInfos[monthKey]}}" wx:key="{{index}}"  wx:for-index="index" wx:for-item="dayInfo">
+        <template is="dayInfo" data="{{...dayInfo}}"></template>
+      </block>
+    </block>
+
+  </scroll-view>
+  <view class="btn-today {{todayShow}}" bindtap="clickToday">
+    <image class="icon-home" mode="aspectFit" src="/static/images/icon_backhome2.png"></image>
+  </view>
+</view>
+
+
+
+
+<template name="dayInfo">
+  <view class="day-block {{style}}">
+    <view class="day-left">
+      <view class="day-week-cname">{{week.cname}}</view>
+      <view class="day-week-ename">{{week.ename}}</view>
+      <view class="day-day">{{daystr}}</view>
+      <view class="day-stiny {{hidetiny}}">{{stiny}}</view>
+    </view>
+    <view class="day-mid">
+      <image class="day-luck-icon" mode="aspectFit" src="/static/images/{{icon}}"></image>
+    </view>
+    <view class="day-right">
+      <view class="separator"></view>
+      <view class="info-event">
+        <view class="event-title">宜:</view>
+        <view class="event-text {{evtGoodsStyle}}">
+          <block wx:for="{{evtGoods}}" wx:key="{{index}}"  wx:for-index="index" wx:for-item="evt">
+            <view class="info-evt-item">{{evt}}</view>
+          </block>
+        </view>
+      </view>
+      <view class="info-event">
+        <view class="event-title">忌:</view>
+        <view class="event-text {{evtBadsStyle}}">
+          <block wx:for="{{evtBads}}" wx:key="{{index}}"  wx:for-index="index" wx:for-item="evt">
+            <view class="info-evt-item">{{evt}}</view>
+          </block>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>

@@ -1,0 +1,28 @@
+<!--pages/pagemonth/pagemonth.wxml-->
+<view class="container container-month" style="margin-left:{{shiftx}}rpx;margin-right:{{-shiftx}}rpx;">
+<!-- bindtouchstart="touchStart" bindtouchmove="touchMove" bindtouchend="touchEnd" -->
+
+  <view class="month-info">
+    <view class="month-info-inner">
+      <view class="month-info-avatar" bindtap="goAccount">
+        <open-data type="userAvatarUrl"></open-data>
+      </view>
+      <view class="month-info-text">
+        <view class="year">{{ curyear }}</view>
+        <view class="month selected">
+          <view class="month-cname">{{curmonthInfo.cname}}</view>
+          <view class="month-ename">{{curmonthInfo.ename}}</view>
+        </view>
+      </view>
+      <view class="btn-today {{btnShow}}" ontap="clickToday"><image class="icon-btn-today" src="/static/images/icon_btn_home.png"></image></view>
+    </view>
+  </view>
+  <swiper-month id="swiper-month" class="swiper-month" year="{{curyear}}" month="{{curmonth}}" bind:swipemonth="onSwipeMonth" bind:clickdate="onClickDate"
+  bind:clickinfo="onClickInfo"></swiper-month>
+
+  <view-tag id="view-tag" class="container-tags" bind:showtag="onShowTag"></view-tag>
+
+  <!-- <view class="special-day" style="opacity:0;left:{{specialL}}px;top:{{specialT}}px;" animation="{{animationsp}}" data-x="{{specialX}}" data-y="{{specialY}}" ontap="onCloseSpecial">
+    <image class="img-special-day" mode="aspectFit" src="{{specialImg}}"></image>
+  </view> -->
+</view>

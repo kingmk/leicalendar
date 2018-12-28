@@ -1,0 +1,3 @@
+<picker mode="multiSelector" bindchange="onSelectChange" bindcolumnchange="onColumnChange" value="{{dateIndex}}" range="{{dateArray}}" disabled="{{disabled}}">
+  <view class="picker {{style}}">{{selectDate}}</view>
+</picker>

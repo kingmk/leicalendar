@@ -1,0 +1,85 @@
+/**index.wxss**/
+.container {
+  position: relative;
+  background-color: #d1bca7;
+}
+
+swiper-month {
+  margin-top: 200rpx;
+  height: 400rpx;
+}
+
+.img-index-bg {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  height: initial;
+}
+
+.anchor {
+  background-color: #fff;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 0rpx;
+  height: 0rpx;
+}
+
+.img-index-info {
+  width: 750rpx;
+  left: -375rpx;
+  top: 245rpx;
+  position: absolute;
+}
+
+calbook {
+  position: absolute;
+}
+
+.init-view {
+  background-color: #000;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+
+.init-view image {
+  width: 100%;
+  height: 100%;
+}
+
+.init-view .init-counting {
+  position: absolute;
+  width: 106rpx;
+  height: 106rpx;
+  bottom:70rpx;
+  right: 70rpx;
+  border-radius: 53rpx;
+  background-color: rgba(176, 177, 180, 0.4);
+  text-align: center;
+  font-size: 60rpx;
+  line-height: 80rpx;
+  padding-top: 7rpx;
+  box-sizing: border-box;
+}
+
+.init-view .init-counting.hide {
+  display: none;
+}
+
+.init-view .init-counting .init-counting-line {
+  height: 46rpx;
+  width: 86rpx;
+  margin: 0 auto;
+  line-height: 46rpx;
+  font-size: 26rpx;
+  font-weight: bold;
+  color: #fff;
+}
+
+.init-view .init-counting .init-counting-line.line1 {
+  border-bottom: 2rpx solid #fff;
+}

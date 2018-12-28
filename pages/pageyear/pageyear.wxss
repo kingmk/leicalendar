@@ -1,0 +1,20 @@
+/* pages/pageyear/pageyear.wxss */
+.container-year {
+  flex-direction: row;
+  align-items: left;
+  position: relative;
+  justify-content: space-between;
+}
+.swiper-year {
+  box-sizing: border-box;
+  padding-left: 40rpx;
+  height: 100%;
+  width: 200rpx;
+}
+
+.image-solar {
+  height: 100%;
+  width: 450rpx;
+
+}
+

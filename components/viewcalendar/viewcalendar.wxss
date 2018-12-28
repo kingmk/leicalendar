@@ -1,0 +1,89 @@
+/* components/viewcalendar/viewcalendar.wxss */
+@import "../../app.wxss";
+
+.wrapper-calendar {
+  width: 100%;
+  box-sizing:border-box;
+  /* flex: 1; */
+  height: 51%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10rpx 0;
+}
+
+.calendar-title, .calendar-row{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: no-wrap;
+  justify-content: space-between;
+}
+.calendar-body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.calendar-date {
+  width: 14.28%;
+  flex: 0 0 14.28%;
+  text-align: center;
+}
+
+.calendar-date.day-0, .calendar-date.day-6 {
+  color: #b81c22;
+}
+
+.calendar-title .calendar-date {
+  font-size: 26rpx;
+  line-height: 30rpx;
+  height: 30rpx;
+}
+
+.wrapper-date {
+  width: 75rpx;
+  height: 75rpx;
+  margin: 0 auto;
+  border-radius: 50%;
+  text-align:center;
+}
+
+.wrapper-date.selected {
+  background-color: #d6b890;
+  color: #fff;
+}
+
+.wrapper-date.selected.curday {
+  background-color: #b81c22;
+  color: #fff;
+}
+
+.wrapper-date .sdate {
+  font-size: 32rpx;
+  padding-top: 10rpx;
+  font-family: Microsoft Yi Baiti;
+}
+.wrapper-date .stiny {
+  font-size: 16rpx;
+  padding-top: 5rpx;
+}
+
+.wrapper-fortune {
+  width: 100%;
+  /* height: 460rpx; */
+  /* margin-top: 20rpx; */
+  box-sizing: border-box;
+  height: 49%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.wrapper-fortune .swiper-fortune {
+  /* height: 100%; */
+  width: 100%;
+  height: 460rpx;
+}
+

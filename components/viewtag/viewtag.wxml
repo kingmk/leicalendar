@@ -1,0 +1,16 @@
+<!--components/viewtag/viewtag.wxml-->
+<view class="tag-panel {{panelstyle}}">
+  <view class="tag-panel-tags">
+  <block wx:for="{{events}}" wx:key="{{eventi}}" wx:for-index="index" wx:for-item="event">
+    <view wx:if="{{index>=4}}" class="block-tag {{event.type}} {{event.style}}" data-event="{{index}}" ontap="clickOtherTag">• {{event.name}}</view>
+  </block>
+  </view>
+</view>
+<view class="wrapper-tags" bindtouchstart="touchStart" bindtouchmove="touchMove" bindtouchend="touchEnd">
+  <view animation="{{animations[0]}}" class="block-tag bg-darkred" style="width: {{tagParam.size[0]}}rpx; height: {{tagParam.size[0]}}rpx; left: {{tagParam.left[0]}}rpx;"><view class="tag-title {{tagParam.showtitle}}" style="font-size: {{tagParam.tsize[0]}}rpx">嫁娶</view></view>
+  <view animation="{{animations[1]}}" class="block-tag bg-bloodorange" style="width: {{tagParam.size[1]}}rpx; height: {{tagParam.size[1]}}rpx; left: {{tagParam.left[1]}}rpx;"><view class="tag-title {{tagParam.showtitle}}" style="font-size: {{tagParam.tsize[1]}}rpx">搬家</view></view>
+  <view animation="{{animations[2]}}" class="block-tag bg-orange" style="width: {{tagParam.size[2]}}rpx; height: {{tagParam.size[2]}}rpx; left: {{tagParam.left[2]}}rpx;"><view class="tag-title {{tagParam.showtitle}}" style="font-size: {{tagParam.tsize[2]}}rpx">出行</view></view>
+  <view animation="{{animations[3]}}" class="block-tag bg-yelloworange" style="width: {{tagParam.size[3]}}rpx; height: {{tagParam.size[3]}}rpx; left: {{tagParam.left[3]}}rpx;"><view class="tag-title {{tagParam.showtitle}}" style="font-size: {{tagParam.tsize[3]}}rpx">装修</view></view>
+  <view animation="{{animations[4]}}" class="block-tag bg-yellow" style="width: {{tagParam.size[4]}}rpx; height: {{tagParam.size[4]}}rpx; left: {{tagParam.left[4]}}rpx;"><view class="tag-title {{tagParam.showtitle}}" style="font-size: {{tagParam.tsize[4]}}rpx">更多</view></view>
+  
+</view>

@@ -1,0 +1,5 @@
+
+<view class="titlebar" style="padding-top: {{statusBarH}}px;">
+{{title}}
+  <image wx:if="{{hasBack && showBack}}" class="img-back" bindtap="clickBack" src="/static/images/arrow-left.png" mode="aspectFit"></image>
+</view>

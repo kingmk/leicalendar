@@ -1,0 +1,97 @@
+/* components/viewtag/viewtag.wxss */
+
+@import "../../app.wxss";
+
+.wrapper-tags {
+  width: 100%;
+  height: 80rpx;
+  position: absolute;
+  /* padding-bottom: 40rpx; */
+  box-sizing: border-box;
+}
+
+.wrapper-tags .tag-intro {
+  position: absolute;
+  height: 60rpx;
+  width: 100%;
+  font-size: 20rpx;
+  color: #918983;
+  box-sizing: border-box;
+  padding-top: 35rpx;
+  text-align: center;
+  top: 0;
+}
+
+.wrapper-tags .tag-intro.hide {
+  display: none;
+}
+
+.wrapper-tags .block-tag {
+  border-radius: 50%;
+  position: absolute;
+  margin-left: 50%;
+  bottom: 0rpx;
+  z-index: 99;
+}
+
+.wrapper-tags .block-tag .tag-title {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: -40rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+  color: #888;
+}
+
+.wrapper-tags .block-tag .tag-title.hide {
+  display: none;
+}
+
+.tag-panel{
+  position: absolute;
+  width: 100%;
+  height: 545rpx;
+  bottom: 0;
+  background-color: #f5f3ea;
+  z-index: 10;
+}
+
+.tag-panel-tags {
+  position: absolute;
+  width: 640rpx;
+  height: 275rpx;
+  left: 50%;
+  margin-left: -320rpx;
+  bottom: 270rpx;
+  /* background-color: #ffcc22; */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.tag-panel.hide {
+  display: none;
+}
+
+.tag-panel .block-tag {
+  width: 110rpx;
+  height: 54rpx;
+  font-size: 28rpx;
+  line-height: 54rpx;
+  text-align: center;
+  color: #918983;
+  border-radius: 4rpx;
+  box-shadow: 0 0 5rpx #ccc;
+  margin: 0 20rpx;
+}
+
+.tag-panel .block-tag.fee {
+  color: #b1b0ad;
+}
+
+.tag-panel .block-tag.selected {
+  background-color: #fcf165;
+  box-shadow: none;
+}

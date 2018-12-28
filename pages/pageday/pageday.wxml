@@ -1,0 +1,6 @@
+<!--pages/pageday/pageday.wxml-->
+<view class="container container-day" bindtouchstart="touchStart" bindtouchmove="touchMove" bindtouchend="touchEnd" style="margin-left:{{shiftx}}rpx;margin-right:{{-shiftx}}rpx;">
+  <!-- <image class="img-back" bindtap="clickBack" src="/static/images/arrow-left.png" mode="aspectFit"></image> -->
+  <scroll-day id="scroll-day" style="height:{{scrollH}}px;" bind:scrollend="onScrollEnd"></scroll-day>
+  <image class="separator" src="/static/images/bg_shadow.png" mode="scaleToFill"></image>
+</view>

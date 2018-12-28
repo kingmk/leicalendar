@@ -1,0 +1,155 @@
+/* components/scrollday/scrollday.wxss */
+.container-scroll-day {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 100%;
+  position: relative;
+}
+
+.sidebar-outer{
+  width: 70rpx;
+  height: 100%;
+}
+
+.sidebar {
+  width: 70rpx;
+  line-height: 70rpx;
+  font-size: 32rpx;
+  color:#848484;
+  writing-mode: vertical-rl;
+  text-align: center;
+  transform: rotate(180deg);
+}
+.sidebar .chinese {
+  display: inline-block;
+  transform: rotate(90deg);
+}
+
+scroll-view {
+  height: 100%;
+}
+
+.day-block{
+  height: 20%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  
+}
+
+.day-block .day-left {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #848484;
+  height: 100%;
+  width: 100rpx;
+}
+
+.day-block.current .day-left {
+  color: #c90000;
+}
+
+.day-block .day-left .day-week {
+  font-size: 36rpx;
+  line-height: 40rpx;
+  height: 40rpx;
+  font-family: Microsoft Yi Baiti;
+}
+.day-block .day-left .day-day {
+  font-size: 56rpx;
+  line-height: 60rpx;
+  height: 60rpx;
+  font-family: Microsoft Yi Baiti;
+}
+.day-block .day-left .day-stiny {
+  font-size: 20rpx;
+  line-height: 20rpx;
+  padding-top: 10rpx;
+  border-top: 1rpx solid #a7a6a3;
+  margin: 0 20rpx;
+}
+.day-block .day-left .day-stiny.hide {
+  border-top: none;
+}
+
+.day-block .day-mid {
+  width: 150rpx;
+  height: 100%;
+  /* background-color: #ffccee; */
+  font-size: 20rpx;
+  color:#918983;
+  text-align: right;
+}
+.day-block .day-mid .day-luck-icon {
+  width: 90rpx;
+  height: 100%;
+}
+
+.day-block .day-right {
+  flex: 1;
+  height: 100%;
+  color: #918983;
+  padding: 20rpx 0;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.day-block .day-right .separator{
+  width: 100%;
+  height: 5rpx;
+  background-color: #f5f3ea;
+  box-shadow: 0 0 10rpx #ddd;
+  position: absolute;
+  bottom: 0;
+}
+
+.day-block .day-right .info-event {
+  height: 50%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.day-block .day-right .info-event .event-title{
+  width: 64rpx;
+  line-height: 100%;
+  text-align: center;
+  margin-left: 20rpx;
+  font-size: 26rpx;
+}
+
+.day-block .day-right .info-event .event-text{
+  flex: 1;
+  margin-left: 12rpx; 
+  margin-right: 60rpx;
+  line-height: 28rpx;
+  font-size: 20rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+
+.btn-today {
+  position: absolute;
+  bottom: 24rpx;
+  right: 24rpx;
+  width: 72rpx;
+  height: 72rpx;
+  border-radius: 15rpx;
+  /* background-color: rgba(255, 255, 255, 0.6); */
+  box-shadow: 0rpx 0 10rpx #999;
+  text-align: center;
+}
+
+.btn-today .icon-home {
+  height: 100%;
+  width: 40rpx;
+}
+
+.btn-today.hide {
+  display: none;
+}

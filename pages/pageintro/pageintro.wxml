@@ -1,0 +1,20 @@
+<titlebar title="演示说明" hasBack="{{hasBack}}"></titlebar>
+<view class="intro-out">
+  <image class="intro-show" src="{{introImage}}" mode="widthFix" bindload="onLoadIntro"></image>
+</view>
+
+<view id="menu0" data-introid="0" class="intro-menu {{selectIntro[0]}}" bindtap="clickMenu">
+  <image class="intro-icon" src="/static/images/icon_bullet.png" mode="aspectFit"></image>
+  <text>点击日期，查看吉凶宜忌。横划屏可换页</text>
+</view>
+<view id="menu1" data-introid="1" class="intro-menu {{selectIntro[1]}}" bindtap="clickMenu">
+  <image class="intro-icon" src="/static/images/icon_bullet.png" mode="aspectFit"></image>
+  <text>滑动底部圆圈择日</text>
+</view>
+<view id="menu2" data-introid="2" class="intro-menu {{selectIntro[2]}}" bindtap="clickMenu">
+  <image class="intro-icon" src="/static/images/icon_bullet.png" mode="aspectFit"></image>
+  <text>点击当日宜忌，滑动可看全年</text>
+</view>
+
+
+<image wx:if="{{hasSkip}}" class="btn-skip" bindtap="goCalendar" src="/static/images/intro_next.png" mode="widthFix"></image>

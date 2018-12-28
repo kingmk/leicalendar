@@ -1,0 +1,30 @@
+<!--components/viewcalendar/viewcalendar.wxml-->
+<view class="wrapper-calendar">
+  <view class="calendar-title">
+    <block wx:for="{{weekdays}}" wx:key="{{index}}"  wx:for-index="index" wx:for-item="weekday">
+      <view class="calendar-date day-{{index%7}}">{{weekday}}</view>
+    </block>
+  </view>
+  <block wx:for="{{daterows}}" wx:key="{{rowi}}"  wx:for-index="rowi" wx:for-item="daterow">
+    <view class="calendar-row">
+      <block wx:for="{{daterow}}" wx:key="{{colj}}"  wx:for-index="colj" wx:for-item="date">
+        <view class="calendar-date day-{{colj}}" data-day="{{date.day}}" ontap="clickDate" data-row="{{rowi}}" data-col="{{colj}}">
+          <view class="wrapper-date {{date.style}} {{date.curday?'curday':''}}">
+            <view class="sdate">{{date.day}}</view>
+            <view class="stiny">{{date.stiny}}</view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </block>
+</view>
+<view class="wrapper-fortune" >
+  <swiper class="swiper-fortune" wx:if="{{showInfo}}" animation="{{animationInfo}}" style="opacity:0;" bindtap="onClickInfo" current="{{currentInfo}}">
+    <swiper-item>
+      <view-info info="{{info}}"></view-info>
+    </swiper-item>
+    <swiper-item wx:if="{{info.extraInfo}}">
+      <view-info info="{{info.extraInfo}}"></view-info>
+    </swiper-item>
+  </swiper>
+</view>

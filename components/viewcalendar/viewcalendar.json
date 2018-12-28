@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "view-info": "/components/viewcalendarinfo/viewcalendarinfo"
+  }
+}

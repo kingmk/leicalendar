@@ -1,0 +1,35 @@
+
+page {
+  background-color: #f2f2f2;
+}
+
+.menus {
+  margin-top: 30rpx;
+}
+
+.menu {
+  font-size: 32rpx;
+  color: #000;
+  background-color: #fff;
+  height: 105rpx;
+  line-height: 105rpx;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 17rpx;
+  padding-left: 109rpx;
+  position: relative;
+}
+
+.menu .icon {
+  position: absolute;
+  width: 45rpx;
+  height: 105rpx;
+  left: 36rpx;
+}
+
+.menu .right {
+  position: absolute;
+  right: 39rpx;
+  width: 40rpx;
+  height: 105rpx;
+}

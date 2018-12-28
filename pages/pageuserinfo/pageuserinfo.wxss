@@ -1,0 +1,74 @@
+/* pages/pageregister/pageregister.wxss */
+page {
+  background-color: #f2f2f2;
+}
+
+.avatar {
+  width: 140rpx;
+  height: 140rpx;
+  margin: 80rpx auto 20rpx;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.nickname {
+  text-align: center;
+  font-size: 32rpx;
+  color: #333;
+}
+
+.form-reg {
+  margin-top: 80rpx;
+  padding: 0 40rpx;
+}
+.form-line {
+
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  line-height: 60rpx;
+  padding: 15rpx 0;
+  border-bottom: 1px solid #d7d7d7;
+  color: #000;
+}
+
+.form-label {
+  box-sizing: border-box;
+  width: 240rpx;
+  font-size: 32rpx;
+  /* padding-left: 10rpx; */
+}
+
+.form-input {
+  flex: 1;
+  font-size: 30rpx;
+  box-sizing: border-box;
+  /* padding-right: 30rpx; */
+  text-align: right;
+  color: #999;
+}
+
+.form-input input{
+  font-size: 32rpx;
+  line-height: 60rpx;
+  height: 60rpx;
+}
+
+.placeholder {
+  color: #999;
+}
+
+.form-info {
+  color: #c43439;
+  font-size: 24rpx;
+  line-height: 44rpx;
+  margin-top: 30rpx;
+}
+
+.form-reg .btn-info {
+  margin-top: 50rpx;
+  background-color: #57be6a;
+  color: #fff;
+}
+
+

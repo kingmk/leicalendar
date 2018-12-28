@@ -1,0 +1,17 @@
+
+<titlebar title="个人中心"></titlebar>
+
+<view class="menus">
+  <view class="menu" bindtap="goUserinfo">
+    <image class="icon" src="/static/images/icon_info.png" mode="aspectFit"></image>
+    <text>个人信息</text>
+    <image class="right" src="/static/images/arrow-right.png" mode="aspectFit"></image>
+  </view>
+  <view class="menu" bindtap="goIntro">
+    <image class="icon" src="/static/images/icon_intro.png" mode="aspectFit"></image>
+    <text>演示说明</text>
+    <image class="right" src="/static/images/arrow-right.png" mode="aspectFit"></image>
+  </view>
+</view>
+
+
