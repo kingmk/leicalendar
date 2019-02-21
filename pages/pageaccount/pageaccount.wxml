@@ -12,6 +12,30 @@
     <text>演示说明</text>
     <image class="right" src="/static/images/arrow-right.png" mode="aspectFit"></image>
   </view>
+  <view class="menu" bindtap="goAgreement">
+    <image class="icon" src="/static/images/icon_agreement.png" mode="aspectFit"></image>
+    <text>用户协议</text>
+    <image class="right" src="/static/images/arrow-right.png" mode="aspectFit"></image>
+  </view>
+</view>
+<view class="qrcodes">
+  <block wx:for="{{qrcodes}}" wx:key="{{idx}}"  wx:for-index="idx" wx:for-item="qrcode">
+    <view class="qrcode" bindtap='clickQrcode' data-idx="{{idx}}">
+      <image class="qrcode-img" src="{{qrcode.image}}" mode="aspectFit"></image>
+      <view class="qrcode-title">{{qrcode.title}}</view>
+    </view>
+  </block>
+</view>
+
+<view class="qrmask" wx:if="{{showQrcode}}">
+  <view class="qrpanel">
+    <view class="qrpanel-title">{{qrdetail.title}}</view>
+    <view class="qrpanel-desc">{{qrdetail.desc}}</view>
+    <image class="qrpanel-img" src="{{qrdetail.image}}"></image>
+    <view class="qrpanel-info">截图或点击保存二维码</view>
+    <view class="qrpanel-searchinfo" wx:if="{{qrdetail.hasSearch}}">{{qrdetail.searchinfo}}</view>
+    <view class="qrpanel-btn" bindtap="clickHideQr">我知道了</view>
+  </view>
 </view>
 
 

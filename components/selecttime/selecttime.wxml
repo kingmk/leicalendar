@@ -1,0 +1,4 @@
+<!--components/selecttime/selecttime.wxml-->
+<picker mode="multiSelector" bindchange="onSelectChange" value="{{timeIndex}}" range="{{timeArray}}" disabled="{{disabled}}">
+  <view class="picker {{style}}">{{selectTime}}</view>
+</picker>

@@ -7,7 +7,7 @@ const keyMonthData = "MONTH_DATA";
 const keySolarData = "SOLAR_DATA";
 const keyOpenId = "OPENID";
 const keyCityData = "PLACE_DATA";
-const version = "0.8.0";
+const version = "0.9.0";
 
 const events = [{ "name": "嫁娶", "type": "free" }, { "name": "移徙", "type": "free" }, { "name": "出行", "type": "free" }, { "name": "动土", "type": "free" }, { "name": "开市", "type": "free" }, { "name": "立券", "type": "free" }, { "name": "交易", "type": "free" }, { "name": "纳财", "type": "free" }, { "name": "会友", "type": "free" }, { "name": "理发", "type": "free" }, { "name": "订婚", "type": "free" }, { "name": "扫舍", "type": "free" }, { "name": "赴任", "type": "free" }, { "name": "求医", "type": "free" }, { "name": "祈福", "type": "free" }, { "name": "安葬", "type": "free" }];
 const eventsSel = [{ "name": "嫁娶", "type": "free" }, { "name": "搬家", "type": "free" }, { "name": "出行", "type": "free" }, { "name": "动土", "type": "free" }, { "name": "开业", "type": "free" }, { "name": "签约", "type": "free" }, { "name": "交易", "type": "free" }, { "name": "置业", "type": "free" }, { "name": "会友", "type": "free" }, { "name": "理发", "type": "free" }, { "name": "订婚", "type": "free" }, { "name": "扫舍", "type": "free" }, { "name": "入职", "type": "free" }, { "name": "求医", "type": "free" }, { "name": "祈福", "type": "free" }, { "name": "安葬", "type": "free" }];
@@ -49,9 +49,12 @@ function apiCall(params) {
     method : params.method || "GET",
     success(res) {
       if (res.data.head.code != "0000") {
-        wx.showToast({
-          title: res.data.head.msg,
-        })
+
+        wx.showModal({
+          title: '错误提示',
+          content: res.data.head.msg,
+          showCancel: false
+        });
         if (typeof (params.fail) == "function") {
           params.fail(res.data.body);
         }
@@ -65,6 +68,9 @@ function apiCall(params) {
         content: '服务器暂时异常，请稍后再试',
         showCancel: false
       });
+      if (typeof (params.fail) == "function") {
+        params.fail(res.data.body);
+      }
     }
   });
 }
@@ -117,7 +123,31 @@ function login(fCallback) {
   })
 }
 
-function getMainUserInfo(fCallback) {
+function fetchSmsCode(mobile, userinfoId, type, fSuccess, fFail) {
+  var data = {
+    mobile: mobile,
+    type: type
+  };
+  if (userinfoId != null) {
+    data.userinfoId = userinfoId;
+  }
+  apiCall({
+    path: "calendar/user/sms_send",
+    data: data,
+    success: function (data) {
+      if (typeof (fSuccess) == "function") {
+        fSuccess();
+      }
+    },
+    fail: function (data) {
+      if (typeof (fFail) == "function") {
+        fFail();
+      }
+    }
+  })
+}
+
+function getMainUserInfo(fSuccess, fFail) {
   getOpenId(function (openId) {
     apiCall({
       path: "calendar/user/get_userinfo",
@@ -126,8 +156,13 @@ function getMainUserInfo(fCallback) {
         type: "MAIN"
       },
       success: function (data) {
-        if (typeof (fCallback) == "function") {
-          fCallback(data.userinfo);
+        if (typeof (fSuccess) == "function") {
+          fSuccess(data.userinfo);
+        }
+      },
+      fail: function (data) {
+        if (typeof (fFail) == "function") {
+          fFail(data.userinfo);
         }
       }
     })
@@ -151,7 +186,7 @@ function getUser(fCallback) {
   });
 }
 
-function createUserInfo(userInfo, fCallback) {
+function createUserInfo(userInfo, fSuccess, fFail) {
   getOpenId(function (openId) {
     userInfo.openId = openId;
     apiCall({
@@ -162,8 +197,13 @@ function createUserInfo(userInfo, fCallback) {
       method: "post",
       data: userInfo,
       success: function (data) {
-        if (typeof (fCallback) == "function") {
-          fCallback(data.userinfo);
+        if (typeof (fSuccess) == "function") {
+          fSuccess(data.userinfo);
+        }
+      },
+      fail: function (data) {
+        if (typeof (fFail) == "function") {
+          fFail();
         }
       }
     });
@@ -171,7 +211,7 @@ function createUserInfo(userInfo, fCallback) {
 
 }
 
-function updateUserInfo(userInfo, fCallback) {
+function updateUserInfo(userInfo, fSuccess, fFail) {
   getOpenId(function (openId) {
     userInfo.openId = openId;
     apiCall({
@@ -182,8 +222,13 @@ function updateUserInfo(userInfo, fCallback) {
       method: "post",
       data: userInfo,
       success: function (data) {
-        if (typeof (fCallback) == "function") {
-          fCallback(data.userinfo);
+        if (typeof (fSuccess) == "function") {
+          fSuccess(data.userinfo);
+        }
+      },
+      fail: function (data) {
+        if (typeof (fFail) == "function") {
+          fFail();
         }
       }
     });
@@ -418,6 +463,7 @@ module.exports = {
   genCurUserinfoKey: genCurUserinfoKey,
   getPlaceData: getPlaceData,
   getUser: getUser,
+  fetchSmsCode: fetchSmsCode,
   getMainUserInfo: getMainUserInfo,
   createUserInfo: createUserInfo,
   updateUserInfo: updateUserInfo,

@@ -8,6 +8,13 @@ const hostBaseImage = "/static/images/";
 const solarImgMap = { "小寒": { "bg": "solar_01_xiaohan.jpg" }, "大寒": { "bg": "solar_02_dahan.jpg" } };
 
 
+const shareProp = {
+  title: "雷历，你的专属择吉日历",
+  path: "/pages/index/index",
+  imageUrl: "http://cdnstatic.leimenyi.com.cn/filedata0/static/share_image.jpeg"
+}
+
+
 const formatTime = date => {
   const year = date.getFullYear()
   const month = date.getMonth() + 1
@@ -19,7 +26,7 @@ const formatTime = date => {
   return [year, month, day].map(formatNumber).join('-') + ' ' + [hour, minute, second].map(formatNumber).join(':')
 }
 
-const formatNumber = n => {
+const formatNumber = n => { 
   n = n.toString()
   return n[1] ? n : '0' + n
 }
@@ -157,6 +164,7 @@ const isMobile = (str) => {
 }
 
 module.exports = {
+  shareProp: shareProp,
   formatNumber: formatNumber,
   formatTime: formatTime,
   rpx2px: rpx2px,

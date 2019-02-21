@@ -27,7 +27,9 @@ Component({
     placeData: null,
     placeIndex: null,
     placeArray: null,
-    placeSelect: null
+    placeSelect: null,
+    placeTxt: "请选择",
+    style: "placeholder"
   },
 
   ready: function() {
@@ -41,7 +43,7 @@ Component({
       self.data.provinceNames = provinceNames;
       var v = [8, 0, 0];
       self.updateSelect(v);
-      self.selectPlace(v);
+      // self.selectPlace(v);
 
     });
   },
@@ -130,7 +132,9 @@ Component({
       }
       this.setData({
         placeSelect: placeSelect,
-        value: placeSelect
+        value: placeSelect,
+        placeTxt: placeSelect.province.fullname+" "+placeSelect.city.fullname+" "+placeSelect.area.fullname,
+        style: ""
       })
 
       this.triggerEvent("selectPlace", placeSelect);

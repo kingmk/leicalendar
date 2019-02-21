@@ -1,0 +1,50 @@
+/* pages/pageagreement/pageagreement.wxss */
+page {
+  overflow-y: auto;
+}
+
+titlebar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #f5f3ea;
+}
+
+.article-main{
+  padding: 180rpx 40rpx 50rpx;
+}
+.article-para{
+  text-indent: 56rpx;
+  font-size: 28rpx ;
+  color:#3f3f3f; 
+  line-height: 48rpx; 
+  margin-bottom: 16rpx;
+}
+
+.emphasize{
+  font-weight: bold;
+}
+.underline{
+  text-decoration: underline;
+}
+
+.mt40 {
+  margin-top: 40rpx;
+}
+
+.st {
+  text-indent: initial;
+}
+
+.h1 {
+  font-size: 40rpx; 
+  color: #000; 
+  line-height: 100rpx;  
+  font-weight: bold;
+}
+.h2 {
+  font-size: 32rpx; 
+  color: #000; 
+  line-height: 80rpx;  
+  font-weight: bold;
+}

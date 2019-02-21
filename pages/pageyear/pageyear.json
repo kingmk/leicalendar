@@ -1,6 +1,0 @@
-{
-  "usingComponents": {
-    "view-year": "/components/viewyear/viewyear"
-  },
-  "disableScroll": true
-}

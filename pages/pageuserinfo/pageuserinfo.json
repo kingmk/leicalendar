@@ -2,6 +2,7 @@
   "usingComponents": {
     "select-place": "/components/selectplace/selectplace",
     "select-date": "/components/selectdate/selectdate",
+    "select-time": "/components/selecttime/selecttime",
     "titlebar": "/components/titlebar/titlebar"
   }
 }

@@ -31,6 +31,7 @@ var posBelowFrames = [
 const app = getApp()
 
 var specialDay = util.isSpecialDay(new Date());
+// specialDay.img = "http://cdnstatic.leimenyi.com.cn/filedata0/static/specialdays/20190208_lichun.jpg";
 console.log(specialDay);
 
 Page({
@@ -44,7 +45,8 @@ Page({
     counting: 3,
     timerInit: 0,
     animationInit: "",
-    showCounting: "hide"
+    showCounting: "hide",
+    hasTapStart: false
   },
   //事件处理函数
   onLoad: function () {
@@ -75,10 +77,13 @@ Page({
     //     console.log(res);
     //   }
     // })
-
+    // wx.showLoading({
+    //   title: '加载中',
+    // })
   },
 
   coverLoaded: function () {
+    // wx.hideLoading();
     if (specialDay) {
       var self = this;
       self.setData({
@@ -157,13 +162,7 @@ Page({
   },
 
   tapStart: function() {
-
-    if(this.data.curState == 1) {
-      wx.showModal({
-        title: '点不开？',
-        content: '个人定制版敬请期待',
-        showCancel: false
-      })
+    if (this.data.hasTapStart) {
       return;
     }
 
@@ -175,7 +174,10 @@ Page({
       curYear = years[0];
       curMonth = 1;
     }
-
+    this.data.hasTapStart = true;
+    wx.showLoading({
+      title: '正在翻开您的雷历',
+    })
     calCommonService.getMainUserInfo(function (userinfo) {
       if (userinfo && userinfo.status == "01") {
         wx.setStorageSync(calCommonService.genCurUserinfoKey(), userinfo);
@@ -187,6 +189,8 @@ Page({
           url: '../pageuserinfo/pageuserinfo?type=register',
         })
       }
+    }, function() {
+      this.data.hasTapStart = false;
     });
   },
 

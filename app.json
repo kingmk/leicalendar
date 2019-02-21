@@ -1,13 +1,12 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/logs/logs",
-    "pages/pageyear/pageyear",
     "pages/pagemonth/pagemonth",
     "pages/pageday/pageday",
     "pages/pageuserinfo/pageuserinfo",
     "pages/pageaccount/pageaccount",
-    "pages/pageintro/pageintro"
+    "pages/pageintro/pageintro",
+    "pages/pageagreement/pageagreement"
   ],
   "window": {
     "backgroundTextStyle": "light",

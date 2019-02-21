@@ -7,6 +7,7 @@
     <!-- <calbook id="book-blue" bookType="book_blue" style="width:{{posBlue.w}}rpx; height: {{posBlue.h}}rpx; left: {{posBlue.l}}rpx; top: {{posBlue.t}}rpx; z-index:{{posBlue.z}}" animate="{{posBlue.a}}"></calbook> -->
     <image class="img-index-info" mode="widthFix" src="../../static/images/index_info.png"></image>
   </view>
+  <view class="copyright">版权 © 雷門易出品  讓人人都好運</view>
 </view>
 
 <view class="init-view" wx:if="{{specialDay}}" animation="{{animationInit}}">

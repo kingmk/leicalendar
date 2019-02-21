@@ -37,7 +37,8 @@ calbook {
 }
 
 .init-view {
-  background-color: #000;
+  /* background-color: #000; */
+  background-color: #d1bca7;
   position: absolute;
   width: 100%;
   height: 100%;
@@ -82,4 +83,15 @@ calbook {
 
 .init-view .init-counting .init-counting-line.line1 {
   border-bottom: 2rpx solid #fff;
+}
+
+.copyright {
+  position: absolute;
+  color: #fff;
+  width: 100%;
+  text-align: center;
+  bottom: 48rpx;
+  font-size: 20rpx;
+  line-height: 20rpx;
+  z-index: 999;
 }

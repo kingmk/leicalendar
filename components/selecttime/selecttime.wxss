@@ -1,5 +1,4 @@
 /* components/selecttime/selecttime.wxss */
-
 .picker.placeholder {
   color: #999;
 }

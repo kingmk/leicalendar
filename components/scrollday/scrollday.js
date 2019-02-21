@@ -61,8 +61,9 @@ Component({
       this.data.curMonth = initMonth;
       var self = this;
       calCommonService.loadMonthInfo(initYear, initMonth, function (monthInfo) {
-        self.data.scrollTop = (initDay-1) * hblock;
         self.appendMonthInfo(initYear, initMonth, monthInfo, function() {
+
+          self.data.scrollTop = (initDay - 1) * hblock;
           self.loadPrevMonthDayInfo(function (countPrepend) {
             self.loadNextMonthDayInfo(function (countAppend) {
               console.log("init length: " + self.data.dayInfoCount);
@@ -412,8 +413,7 @@ Component({
 
       return (timeNow >= timeMin && timeNow <= timeMax);
 
-    },
-
+    }
 
   }
 })
