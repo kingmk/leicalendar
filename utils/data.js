@@ -1,6 +1,8 @@
 
-var img_yuanxiao = require("./imgdata_20190219_yuanxiao.js")
-var img_yushui = require("./imgdata_20190220_yushui.js")
+var img_yushui = require("./imgdata_20190220_yushui.js");
+var img_funvjie = require("./imgdata_20190308_funvjie.js");
+var img_jingzhe = require("./imgdata_20190306_jingzhe.js");
+var img_chunfen = require("./imgdata_20190321_chunfen.js");
 
 
 // console.log(test);
@@ -67,7 +69,7 @@ const specialDays = [
     "timeEnd": "2019-02-19 23:59:59",
     "solar": "",
     "holiday": "元宵",
-    "img": img_yuanxiao.imgdata
+    "img": ""
   },
   {
     "timeStart": "2019-02-20 00:00:00",
@@ -81,21 +83,21 @@ const specialDays = [
     "timeEnd": "2019-03-08 23:59:59",
     "solar": "",
     "holiday": "妇女节",
-    "img": ""
+    "img": img_funvjie.imgdata
   },
   {
     "timeStart": "2019-03-06 05:10:00",
     "timeEnd": "2019-03-21 05:57:59",
     "solar": "惊蛰",
     "holiday": "",
-    "img": ""
+    "img": img_jingzhe.imgdata
   },
   {
     "timeStart": "2019-03-21 05:58:00",
     "timeEnd": "2019-04-05 09:50:59",
     "solar": "春分",
     "holiday": "",
-    "img": ""
+    "img": img_chunfen.imgdata
   },
   {
     "timeStart": "2019-04-05 09:51:00",
